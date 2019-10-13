@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>title</title>
+	<meta name="author" content="name">
+
+	<script>
+		/* My Solution */
+		var Person = function (firstAndLast) {
+			// Complete the method below and implement the others similarly
+
+			let firstName = firstAndLast.split(' ')[0];
+			let lastName = firstAndLast.split(' ')[1];
+
+			this.getFullName = function () {
+				return firstName + ' ' + lastName;
+			};
+
+			this.getFirstName = function () {
+				return firstName;
+			};
+
+			this.getLastName = function () {
+				return lastName;
+			};
+
+			this.setFirstName = function (first) {
+				firstName = first;
+			}
+
+			this.setLastName = function (last) {
+				lastName = last;
+			}
+
+			this.setFullName = function (firstAndLast) {
+				firstName = firstAndLast.split(' ')[0];;
+				lastName = firstAndLast.split(' ')[1];;
+			}
+		};
+
+		var bob = new Person('Bob Ross');
+		bob.getFullName();
+
+		/* FCC: Basic Solution */
+
+		var Person = function (firstAndLast) {
+			var fullName = firstAndLast;
+
+			this.getFirstName = function () {
+				return fullName.split(" ")[0];
+			};
+
+			this.getLastName = function () {
+				return fullName.split(" ")[1];
+			};
+
+			this.getFullName = function () {
+				return fullName;
+			};
+
+			this.setFirstName = function (name) {
+				fullName = name + " " + fullName.split(" ")[1];
+			};
+
+			this.setLastName = function (name) {
+				fullName = fullName.split(" ")[0] + " " + name;
+			};
+
+			this.setFullName = function (name) {
+				fullName = name;
+			};
+		};
+
+		var bob = new Person('Bob Ross');
+		bob.getFullName();
+		/* FCC: Intermediate Solution */
+
+
+		/* FCC: Advanced Solution */
+	</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

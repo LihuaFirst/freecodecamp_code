@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>title</title>
+	<meta name="author" content="name">
+
+	<script>
+		function reverseString(str) {
+			let tempArr = [];
+			for (let i = 0; i < str.length; i++) {
+				tempArr.unshift(str[i]);
+			}
+			str = tempArr.join('');
+
+			return str;
+		}
+
+		reverseString("hello");
+	</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

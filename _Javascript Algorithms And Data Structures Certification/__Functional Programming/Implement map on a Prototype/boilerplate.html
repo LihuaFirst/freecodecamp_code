@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>title</title>
+	<meta name="author" content="name">
+
+	<script>
+		/* My Solution */
+		// the global Array
+		var s = [23, 65, 98, 5];
+
+		Array.prototype.myMap = function (callback) {
+			var newArray = [];
+			// Add your code below this line
+
+			for (let i = 0; i < this.length; i++) {
+				newArray[i] = callback(this[i]);
+				console.log(newArray[i]);
+			}
+			// Add your code above this line
+			return newArray;
+
+		};
+
+		var new_s = s.myMap(function (item) {
+			return item * 2;
+		});
+		/* FCC: Basic Solution */
+		// the global Array
+		var s = [23, 65, 98, 5];
+
+		Array.prototype.myMap = function (callback) {
+			var newArray = [];
+			// Add your code below this line
+			this.forEach(a => newArray.push(callback(a)));
+			// Add your code above this line
+			return newArray;
+
+		};
+
+		var new_s = s.myMap(function (item) {
+			return item * 2;
+		});
+
+		/* FCC: Intermediate Solution */
+
+
+		/* FCC: Advanced Solution */
+	</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

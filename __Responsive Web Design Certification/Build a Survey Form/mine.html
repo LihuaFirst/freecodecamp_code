@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Lihua First">
+
+	<title>Survey Form</title>
+
+	<style>
+		body {
+			background:
+		}
+		
+		fieldset {
+			display: block;
+			border: 0;
+			margin-top: 15px;
+		}
+		
+	</style>
+</head>
+
+<body>
+	<h1 id="title">Survey Form</h1>
+	<form id="survey-form" action="#" method="GET">
+		<legend id="description">Let us know how we can improve freeCodeCamp</legend>
+
+		<fieldset>
+			<label for="name" id="name-label">Name: </label>
+			<input type="text" id="name" name="name" required placeholder="please enter your name" autofocus>
+		</fieldset>
+
+		<fieldset>
+			<label for="email" id="email-label">Email:</label>
+			<input type="email" id="email" name="email" required placeholder="please enter your email">
+		</fieldset>
+
+		<fieldset>
+			<label for="number" id="number-label">Number: </label>
+			<input type="number" id="number" name="number" min="0" max="10" placeholder="please enter a number between 0~10">
+		</fieldset>
+
+
+		<fieldset>
+			<label for="gender">Gender:</label>
+			<select name="dropdown" id="dropdown">
+				<option>Male</option>
+				<option>Female</option>
+			</select>
+		</fieldset>
+		
+		<fieldset>
+			<p>Protein: </p>
+			<label for="milk"><input type="radio" name="food" id="milk" value="milk"> Milk </label>
+			
+			<label for="tofu"><input type="radio" name="food" id="tofu" value="tofu"> Tofu </label>
+		</fieldset>
+		
+		<fieldset>
+			<p>Veggie:</p>
+			<label for="broccoli"><input type="checkbox" id="broccoli"  name="veggie" value="broccoli">broccoli</label>
+			<label for="kale"><input type="checkbox" id="kale"  name="veggie" value="kale">kale</label>
+			<label for="cucumber"><input type="checkbox" id="cucumber"  name="veggie" value="cucumber">cucumber</label>
+			
+		</fieldset>
+		<fieldset>
+			<label for="comment">Comments: </label>
+			<textarea id="comment" name="comment" placeholder="please add additional comments"></textarea>
+		</fieldset>
+		
+		<input type="submit">
+	</form>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>title</title>
+	<meta name="author" content="name">
+
+	<script>
+		/* My Solution */
+		function diffArray(arr1, arr2) {
+			var newArr = [];
+			// Same, same; but different.
+
+			arr1.forEach(function (item) {
+				if (arr2.indexOf(item) < 0) {
+					newArr.push(item);
+				}
+			})
+			arr2.forEach(function (item) {
+				if (arr1.indexOf(item) < 0) {
+					newArr.push(item);
+				}
+			})
+			console.log(newArr);
+			return newArr;
+		}
+
+		diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+		/* FCC: Basic Solution */
+		function diffArray(arr1, arr2) {
+			var newArr = [];
+
+			function onlyInFirst(first, second) {
+				// Looping through an array to find elements that don't exist in another array
+				for (var i = 0; i < first.length; i++) {
+					if (second.indexOf(first[i]) === -1) {
+						// Pushing the elements unique to first to newArr
+						newArr.push(first[i]);
+					}
+				}
+			}
+
+			onlyInFirst(arr1, arr2);
+			onlyInFirst(arr2, arr1);
+
+			return newArr;
+		}
+
+		diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+
+		/* FCC: Intermediate Solution */
+
+		function diffArray(arr1, arr2) {
+			return arr1
+				.concat(arr2)
+				.filter(
+					item => !arr1.includes(item) || !arr2.includes(item)
+				)
+		}
+
+		console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
+		/* FCC: Advanced Solution */
+
+		function diffArray(arr1, arr2) {
+			return arr1
+				.filter(el => !arr2.includes(el))
+				.concat(
+					arr2.filter(el => !arr1.includes(el))
+				)
+		}
+
+		diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+
+		/* FCC: Advanced Solution */
+		function diffArray(arr1, arr2) {
+			return [
+    ...diff(arr1, arr2),
+    ...diff(arr2, arr1)
+  ]
+
+			function diff(a, b) {
+				return a.filter(item => b.indexOf(item) === -1);
+			}
+		}
+	</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

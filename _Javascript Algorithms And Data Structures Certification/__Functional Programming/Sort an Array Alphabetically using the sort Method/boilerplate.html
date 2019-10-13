@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>title</title>
+	<meta name="author" content="name">
+
+	<script>
+		/* My Solution */
+		function alphabeticalOrder(arr) {
+			// Add your code below this line
+			let sortArr = arr.sort(function (a, b) {
+				return (a >= b)? 1: -1;
+			})
+
+			console.log(sortArr);
+			return sortArr;
+			// Add your code above this line
+		}
+
+		var original = ["a", "d", "c", "a", "z", "g"];
+		console.log(alphabeticalOrder(original));
+	
+
+		/* FCC: Basic Solution */
+
+//		function alphabeticalOrder(arr) {
+//			// Add your code below this line
+//			return arr.sort(function (a, b) {
+//				return a > b;
+//			});
+//			// Add your code above this line
+//		}
+//		alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
+		
+		
+		/* FCC: Intermediate Solution */
+
+
+		/* FCC: Advanced Solution */
+	</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

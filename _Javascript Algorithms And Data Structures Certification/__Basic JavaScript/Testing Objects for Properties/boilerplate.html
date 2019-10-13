@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>title</title>
+	<meta name="author" content="name">
+
+	<script>
+		// Setup
+		var myObj = {
+			gift: "pony",
+			pet: "kitten",
+			bed: "sleigh"
+		};
+
+		function checkObj(checkProp) {
+			console.log(checkProp + ' = ' + myObj.checkProp);  // there is no property called checkProp
+			console.log(checkProp + ' = ' + myObj[checkProp]);
+			// Your Code Here
+			if (myObj.hasOwnProperty(checkProp)) {
+				return myObj.checkProp;
+				// return myObj[checkProp];
+			}
+			return "Not Found";
+
+		}
+
+		// Test your code by modifying these values
+		checkObj("gift");
+	</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

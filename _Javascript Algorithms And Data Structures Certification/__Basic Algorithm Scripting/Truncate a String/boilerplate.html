@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>title</title>
+	<meta name="author" content="name">
+
+	<script>
+		function truncateString(str, num) {
+			// Clear out that junk in your trunk
+			let result = '';
+			console.log('str length: ' + str.length);
+			console.log('num: ' + num);
+			
+			if (str.length > num) {
+				for (let i = 0; i < num; i++) {
+					result += str[i];
+				}
+				result += '...';
+			} else {
+				result = str;
+			}
+			 
+			console.log(result);
+			return result;
+		}
+
+		truncateString('abcd', 3);
+		//truncateString("A-tisket a-tasket A green and yellow basket", 8);
+		//truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length + 2)
+	</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

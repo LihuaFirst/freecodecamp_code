@@ -1,0 +1,1 @@
+{"index.js":"let repeatNum = \"42 42 42\";\n//let reRegex = /^(\\d+)\\s\\1\\2\\1$/; // Change this line\nlet reRegex = /^(\\d+)\\s\\1\\s\\1$/;\nlet result = reRegex.test(repeatNum);"}

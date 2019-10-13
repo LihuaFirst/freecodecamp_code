@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>title</title>
+	<meta name="author" content="name">
+
+	<script>
+		/* My Solution */
+		function fearNotLetter(str) {
+
+			const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+
+			let head = alphabet.indexOf(str[0]);
+			let tail = alphabet.indexOf(str[str.length - 1]);
+
+			let result = undefined;
+			for (let i = head; i < tail; i++) {
+				if (str.indexOf(alphabet[i]) < 0) {
+					result = alphabet[i];
+				}
+			}
+			console.log(result);
+
+			return result;
+		}
+
+		fearNotLetter("abce");
+
+
+		/* FCC: Basic Solution */
+		function fearNotLetter(str) {
+
+			for (var i = 0; i < str.length; i++) {
+				/* code of current character */
+				var code = str.charCodeAt(i);
+
+				/* if code of current character is not equal to first character + no of iteration
+				hence character has been escaped */
+				if (code !== str.charCodeAt(0) + i) {
+
+					/* if current character has escaped one character find previous char and return */
+					return String.fromCharCode(code - 1);
+				}
+			}
+			return undefined;
+		}
+
+		// test here
+		fearNotLetter("abce");
+
+		/* FCC: Intermediate Solution */
+		// Adding this solution for the sake of avoiding using 'for' and 'while' loops.
+		// See the explanation for reference as to why. It's worth the effort.
+
+		function fearNotLetter(str) {
+			var compare = str.charCodeAt(0),
+				missing;
+
+			str.split('').map(function (letter, index) {
+				if (str.charCodeAt(index) == compare) {
+					++compare;
+				} else {
+					missing = String.fromCharCode(compare);
+				}
+			});
+
+			return missing;
+		}
+
+		// test here
+		fearNotLetter("abce");
+
+		/* FCC: Advanced Solution */
+		function fearNotLetter(str) {
+			for (let i = 1; i < str.length; ++i) {
+				if (str.charCodeAt(i) - str.charCodeAt(i - 1) > 1) {
+					return String.fromCharCode(str.charCodeAt(i - 1) + 1);
+				}
+			}
+		}
+	</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

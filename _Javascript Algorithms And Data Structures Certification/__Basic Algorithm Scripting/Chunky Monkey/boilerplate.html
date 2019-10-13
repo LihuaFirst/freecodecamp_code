@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>title</title>
+	<meta name="author" content="name">
+
+	<script>
+		/* My Solution */
+		function chunkArrayInGroups(arr, size) {
+			// Break it up.
+			let result = [];
+			for (let i = 0; i < (arr.length / size); i++) {
+				result[i] = arr.slice(size * i, size * (i + 1));
+			}
+			console.log(result);
+			return result;
+		}
+
+		//chunkArrayInGroups(["a", "b", "c", "d", 'e'], 2);
+		chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3)
+
+		/* FCC: Basic Solution */
+		function chunkArrayInGroups(arr, size) {
+
+			var temp = [];
+			var result = [];
+
+			for (var a = 0; a < arr.length; a++) {
+				if (a % size !== size - 1)
+					temp.push(arr[a]);
+				else {
+					temp.push(arr[a]);
+					result.push(temp);
+					temp = [];
+				}
+			}
+
+			if (temp.length !== 0)
+				result.push(temp);
+			return result;
+		}
+
+		/* FCC: Intermediate Solution */
+		function chunkArrayInGroups(arr, size) {
+			// Break it up.
+			var arr2 = [];
+			for (var i = 0; i < arr.length; i += size) {
+				arr2.push(arr.slice(i, i + size));
+			}
+			return arr2;
+		}
+
+		/* FCC: Advanced Solution */
+
+		function chunkArrayInGroups(arr, size) {
+			// Break it up.
+			var newArr = [];
+			var i = 0;
+
+			while (i < arr.length) {
+				newArr.push(arr.slice(i, i + size));
+				i += size;
+			}
+			return newArr;
+		}
+		chunkArrayInGroups(["a", "b", "c", "d"], 2);
+	</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>title</title>
+	<meta name="author" content="name">
+
+	<script>
+		//Setup
+		var contacts = [
+			{
+				"firstName": "Akira",
+				"lastName": "Laine",
+				"number": "0543236543",
+				"likes": ["Pizza", "Coding", "Brownie Points"]
+    },
+			{
+				"firstName": "Harry",
+				"lastName": "Potter",
+				"number": "0994372684",
+				"likes": ["Hogwarts", "Magic", "Hagrid"]
+    },
+			{
+				"firstName": "Sherlock",
+				"lastName": "Holmes",
+				"number": "0487345643",
+				"likes": ["Intriguing Cases", "Violin"]
+    },
+			{
+				"firstName": "Kristian",
+				"lastName": "Vos",
+				"number": "unknown",
+				"likes": ["JavaScript", "Gaming", "Foxes"]
+    }
+];
+
+
+		function lookUpProfile(name, prop) {
+			// Only change code below this line
+			var foundName = false;
+			var result;
+			for (var i = 0; i < contacts.length; i++) {
+				if (contacts[i].firstName == name) {
+					foundName = true;
+					if (contacts[i].hasOwnProperty(prop)) {
+						result = contacts[i][prop];
+					} else {
+						result = "No such property";
+					}
+				}
+				if (!foundName) {
+					result = "No such contact";
+				}
+				console.log(result);
+				return result;
+				// Only change code above this line
+			}
+		}
+
+		// Change these values to test your function
+//		lookUpProfile("Akira", "likes");
+		lookUpProfile("Kristian", "lastName");
+		lookUpProfile("Sherlock", "likes" );
+		lookUpProfile("Harry","likes");
+	</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

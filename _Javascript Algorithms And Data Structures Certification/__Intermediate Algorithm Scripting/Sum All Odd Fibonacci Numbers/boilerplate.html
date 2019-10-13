@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>title</title>
+	<meta name="author" content="name">
+
+	<script>
+		/* My Solution */
+
+		/*function sumFibs(num) {
+			let result = 0;
+
+			var fibonacci = function (x) {
+				if (x >= 2) {
+					return fibonacci(x - 1) + fibonacci(x - 2);
+				} else {
+					return 1;
+				}
+			}
+			
+			var y = fibonacci(1000);
+			console.log('fibonacci: '+y);
+
+			var index = 0;
+			var temp = fibonacci(index);
+			while (temp <= num) {
+
+				//console.log('fibonacci: '+temp);
+				if (temp % 2 == 1) {
+					result += temp;
+				}
+				index++;
+				temp = fibonacci(index);
+			}
+
+
+
+			return result;
+		}
+
+		
+		sumFibs(1001);*/
+		
+
+		/* FCC: Basic Solution */
+		function sumFibs(num) {
+			var prevNumber = 0;
+			var currNumber = 1;
+			var result = 0;
+			while (currNumber <= num) {
+				if (currNumber % 2 !== 0) {
+					result += currNumber;
+				}
+
+				currNumber += prevNumber;
+				prevNumber = currNumber - prevNumber;
+			}
+
+			return result;
+		}
+
+		// test here
+		sumFibs(4);
+
+		/* FCC: Intermediate Solution */
+
+		function sumFibs(num) {
+			// Perform checks for the validity of the input
+			if (num < 0) return -1;
+			if (num === 0 || num === 1) return 1;
+
+			// Create an array of fib numbers till num
+			const arrFib = [1, 1];
+			let nextFib = 0;
+
+			// We put the new Fibonacci numbers to the front so we
+			// don't need to calculate the length of the array on each
+			// iteration
+			while ((nextFib = arrFib[0] + arrFib[1]) <= num) {
+				arrFib.unshift(nextFib);
+			}
+
+			// Sum only the odd numbers and return the value
+			return arrFib.reduce((acc, curr) => {
+				return acc + curr * (curr % 2);
+			});
+		}
+
+		// test here
+		sumFibs(4);
+		/* FCC: Advanced Solution */
+	</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

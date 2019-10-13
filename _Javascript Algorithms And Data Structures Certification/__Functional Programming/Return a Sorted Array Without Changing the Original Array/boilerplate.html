@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>title</title>
+	<meta name="author" content="name">
+
+	<script>
+		/* My Solution */
+		var globalArray = [5, 6, 3, 2, 9];
+
+		function nonMutatingSort(arr) {
+			// Add your code below this line
+			let newArr = arr.concat();
+
+			// console.log(newArr);
+			return newArr.sort();
+
+			// Add your code above this line
+		}
+		nonMutatingSort(globalArray);
+
+		/* FCC: Basic Solution */
+		var globalArray = [5, 6, 3, 2, 9];
+
+		function nonMutatingSort(arr) {
+			// Add your code below this line
+			return [].concat(arr).sort(function (a, b) {
+				return a - b;
+			});
+			// Add your code above this line
+		}
+		nonMutatingSort(globalArray);
+
+		/* FCC: Intermediate Solution */
+
+
+		/* FCC: Advanced Solution */
+	</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

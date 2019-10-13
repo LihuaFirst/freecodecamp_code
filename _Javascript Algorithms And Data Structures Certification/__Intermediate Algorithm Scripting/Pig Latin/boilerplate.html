@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>title</title>
+	<meta name="author" content="name">
+
+	<script>
+		/* My Solution */
+		function translatePigLatin(str) {
+			const vowels = ['a', 'e', 'i', 'o', 'u'];
+			let result = '';
+			if (vowels.indexOf(str[0]) >= 0) {
+				// if begin with vowel, just add "way"
+				result = str + 'way';
+			} else {
+				let i = 0;
+				while (vowels.indexOf(str[i]) < 0) {
+					// is consonant
+					i++;
+				}
+				result = str.slice(i) + str.slice(0, i) + 'ay';
+			}
+
+			console.log(result);
+			return result;
+		}
+
+		translatePigLatin("consonant");
+
+		/* FCC: Basic Solution */
+
+		function translatePigLatin(str) {
+			// Create variables to be used
+			var pigLatin = '';
+			var regex = /[aeiou]/gi;
+
+			// Check if the first character is a vowel
+			if (str[0].match(regex)) {
+				pigLatin = str + 'way';
+
+			} else if (str.match(regex) === null) {
+				// Check if the string contains only consonants
+				pigLatin = str + 'ay';
+			} else {
+
+				// Find how many consonants before the first vowel.
+				var vowelIndice = str.indexOf(str.match(regex)[0]);
+
+				// Take the string from the first vowel to the last char
+				// then add the consonants that were previously omitted and add the ending.
+				pigLatin = str.substr(vowelIndice) + str.substr(0, vowelIndice) + 'ay';
+			}
+
+			return pigLatin;
+		}
+
+		// test here
+		translatePigLatin("consonant");
+		/* FCC: Intermediate Solution */
+		function translatePigLatin(str) {
+			function check(obj) {
+				return ['a', 'i', 'u', 'e', 'o'].indexOf(str.charAt(obj)) == -1 ? check(obj + 1) : obj;
+			}
+
+			return str.substr(check(0)).concat((check(0) === 0 ? 'w' : str.substr(0, check(0))) + 'ay');
+		}
+
+		// test here
+		translatePigLatin("consonant");
+
+		/* FCC: Advanced Solution */
+
+		function translatePigLatin(str) {
+			var strArr = [];
+			var tmpChar;
+
+			// check if the char is consonant using RegEx
+			function isConsonant(char) {
+				return !/[aeiou]/.test(char);
+			}
+
+			// return initial str + "way" if it starts with vowel
+			// if not - convert str to array
+			if (!isConsonant(str.charAt(0)))
+				return str + "way";
+			else
+				strArr = str.split("");
+
+			// push all consonats to the end of the array
+			while (isConsonant(strArr[0])) {
+				tmpChar = strArr.shift();
+				strArr.push(tmpChar);
+			}
+			// convert array to string and concatenate "ay" at the end  
+			return strArr.join("") + "ay";
+		}
+
+		// test here
+		translatePigLatin("consonant");
+	</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

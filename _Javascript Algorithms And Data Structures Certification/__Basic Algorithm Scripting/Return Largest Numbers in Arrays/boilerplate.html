@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>title</title>
+	<meta name="author" content="name">
+
+	<script>
+		function largestOfFour(arr) {
+			// You can do this!
+			let maxArr = [];
+			for (let i = 0; i < arr.length; i++) {
+				maxArr[i] = arr[i][0];
+				for (let j = 0; j < arr[i].length; j++) {
+					if (maxArr[i] < arr[i][j]) {
+						maxArr[i] = arr[i][j];
+					}
+				}
+			}
+
+			return maxArr;
+		}
+
+		largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+	</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

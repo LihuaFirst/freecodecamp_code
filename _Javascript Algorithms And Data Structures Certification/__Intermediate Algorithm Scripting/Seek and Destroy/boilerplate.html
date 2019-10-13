@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>title</title>
+	<meta name="author" content="name">
+
+	<script>
+		/* My Solution */
+		function destroyer(arr) {
+			// Remove all the values
+
+			let result = [].concat(arr);
+			for (let i = 1; i < arguments.length; i++) {
+				
+				if(result.indexOf(arguments[i]) >=0) {
+					
+				result = result.filter(item=> arguments[i] != item);					
+				}
+				
+			}
+
+			console.log(result);
+			return result;
+		}
+
+//		destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+		
+		destroyer([3, 5, 1, 2, 2], 2, 3, 5)
+		/* FCC: Basic Solution */
+
+
+		/* FCC: Intermediate Solution */
+
+
+		/* FCC: Advanced Solution */
+	</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

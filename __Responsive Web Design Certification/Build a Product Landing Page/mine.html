@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Lihua First">
+
+	<title>Landing Page</title>
+
+	<style>
+		body {
+			font-family: Ariel, sans-serif;
+			background: #eee;
+		}
+		
+		.container {
+			position: relative;
+		}
+		
+		#header {
+			position: fixed;
+			top: 0;
+			min-height: 100px;
+			background: #333;
+			width: 100%;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			@media (max-width: 768px) {
+				flex-wrap: wrap;
+			}
+		}
+		
+		#header-img {
+			width: 100px;
+		}
+		
+		#nav-bar {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			@media (max-width: 768px) {
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+			}
+		}
+		
+		.nav-link {
+			display: block;
+			text-decoration: none;
+			color: #fff;
+			font-size: 20px;
+		}
+		
+		.nav-link:hover {
+			text-decoration: underline;
+		}
+		
+		main {
+			position: relative;
+			margin-top: 100px;
+		}
+		
+		#video {
+			text-align: center;
+		}
+		
+		.hero {
+			padding: 50px;
+			text-align: center;
+		}
+		
+		.sr-only {
+			position: absolute;
+			left: -10000px;
+			width: 1px;
+			height: 1px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<header id="header">
+			<img id="header-img" src="https://www.designevo.com/res/templates/thumb_small/pretty-and-cute-unicorn-icon.png" alt="unicorn logo">
+			<nav id="nav-bar">
+				<a href="#service" class="nav-link">Services</a>
+				<a href="#" class="nav-link">Pricing</a>
+				<a href="#" class="nav-link">Contact</a>
+			</nav>
+		</header>
+
+		<main>
+			<section class="hero">
+				<h1>Unicorn Design</h1>
+				<form id="form" action="https://www.freecodecamp.org/email-submit" method="post">
+					<label for="email">Enter your email for a free consultation</label>
+					<input type="email" id="email" placeholder="Your Email">
+					<input type="submit">
+				</form>
+			</section>
+
+			<h2 id="service">Services</h2>
+			<div id="video" class="video-container">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/VS4X_-4S0PU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+
+			<h2 id="pricing">Pricing</h2>
+
+			<div class="grid">
+				<div class=""></div>
+			</div>
+		</main>
+
+		<footer>
+
+		</footer>
+	</div>
+</body>
+
+</html>

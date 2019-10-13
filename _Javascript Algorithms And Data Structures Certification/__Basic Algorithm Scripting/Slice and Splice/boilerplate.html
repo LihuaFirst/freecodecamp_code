@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>title</title>
+	<meta name="author" content="name">
+
+	<script>
+		/* Mine */
+		function frankenSplice(arr1, arr2, n) {
+			// It's alive. It's alive!
+
+			let result = [];
+			if (n >= 0) {
+				result = arr2.slice(0, n); // get first part of arr2
+
+				// copy arr1
+				for (let i = 0; i < arr1.length; i++) {
+					result.push(arr1[i]);
+				}
+
+				// copy rest of arr2
+
+				for (let j = n; j < arr2.length; j++) {
+					result.push(arr2[j]);
+				}
+			}
+			console.log(result);
+			return result;
+		}
+
+		frankenSplice([1, 2, 3], [4, 5, 6], 1);\
+
+		/*FCC solution*/
+		function frankenSplice(arr1, arr2, n) {
+			// It's alive. It's alive!
+			
+			//Create a copy of the second array inside of the function. This will ensure that the original array is not mutated. This can be done by using the slice operation on the second array, and assign it to a variable.
+			let localArray = arr2.slice(); 
+			
+			for (let i = 0; i < arr1.length; i++) {
+				localArray.splice(n, 0, arr1[i]);
+				n++;
+			}
+			return localArray;
+		}
+	</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

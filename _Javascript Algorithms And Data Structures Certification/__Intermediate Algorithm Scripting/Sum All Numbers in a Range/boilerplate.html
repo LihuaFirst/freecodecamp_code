@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>title</title>
+	<meta name="author" content="name">
+
+	<script>
+		/* My Solution */
+		function sumAll(arr) {
+			var max = (arr[0] > arr[1]) ? arr[0] : arr[1];
+			var min = (arr[0] > arr[1]) ? arr[1] : arr[0];
+
+			let result = 0;
+			for (let i = min; i <= max; i++) {
+				result += i;
+			}
+			return result;
+		}
+
+		console.log(sumAll([1, 4]));
+
+		console.log(sumAll([10, 5]));
+
+		/* FCC: Basic Solution */
+
+		function sumAll(arr) {
+			var max = Math.max(arr[0], arr[1]);
+			var min = Math.min(arr[0], arr[1]);
+			var temp = 0;
+			for (var i = min; i <= max; i++) {
+				temp += i;
+			}
+			return (temp);
+		}
+
+		sumAll([1, 4]);
+
+		/* FCC: Intermediate Solution */
+		function sumAll(arr) {
+			// Buckle up everything to one!
+
+			// Using ES6 arrow function (one-liner)
+			var sortedArr = arr.sort((a, b) => a - b);
+			var firstNum = arr[0];
+			var lastNum = arr[1];
+			// Using Arithmetic Progression summing formula
+
+			var sum = (lastNum - firstNum + 1) * (firstNum + lastNum) / 2;
+			return sum;
+		}
+
+		/* FCC: Advanced Solution */
+
+		function sumAll(arr) {
+			var sum = 0;
+			for (var i = Math.min(...arr); i <= Math.max(...arr); i++) {
+				sum += i;
+			}
+			return sum;
+		}
+
+		sumAll([1, 4]);
+	</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

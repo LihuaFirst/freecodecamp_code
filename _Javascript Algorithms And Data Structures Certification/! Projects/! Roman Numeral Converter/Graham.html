@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>title</title>
+	<meta name="author" content="name">
+
+	<script>
+		const symbols = ['I', 'V', 'X', 'L', 'C', 'D', 'M'];
+
+		const symbolSequenceForDigit = [
+  [], // 0
+  [0], // 1 e.g. I or X
+  [0, 0], // 2 e.g. II or XX
+  [0, 0, 0], // 3 e.g. III or XXX
+  [0, 1], // 4 e.g. IV or XL
+  [1], // 5 e.g. V or L
+  [1, 0], // 6 e.g. VI or LX
+  [1, 0, 0], // 7 e.g. VII or LXX
+  [1, 0, 0, 0], // 8 e.g. IIX or XXC
+  [0, 2] // 9 e.g. IX or XC
+];
+
+		function convertToRoman(number) {
+			const digits = String(number);
+			return digits.split('').map((digit, index) => {
+				const sequenceIndex = digit.charCodeAt(0) - '0'.charCodeAt(0);
+				const sequence = symbolSequenceForDigit[sequenceIndex];
+				const symbolOffset = (digits.length - index - 1) * 2;
+				return sequence.map(symbolIndex => symbols[symbolIndex + symbolOffset]).join('');
+			}).join('');
+		}
+
+		console.log(convertToRoman(30));
+	</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

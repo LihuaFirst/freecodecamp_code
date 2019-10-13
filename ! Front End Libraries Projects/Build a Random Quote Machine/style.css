@@ -1,0 +1,52 @@
+body {
+	background-color: #16B6DF;
+}
+
+#wrapper {
+	border-radius: 3px;
+}
+
+#quote-box {
+	position: relative;
+	margin: auto;
+	max-width: 500px;
+	top: 50px;
+	background-color: white;
+	padding: 30px;	
+   border-radius: 4px;
+}
+
+.quote {
+	max-width: 400px;
+	position: relative;
+	margin: 30px auto;
+}
+
+.quote:before,
+.quote:after {
+	position: absolute;
+	top: 10px;
+	font-size: 100px;
+	color: #16B6DF;
+	font-family: Arial;
+	font-weight: bold;
+	line-height: 50px;
+}
+
+.quote:before {
+	left: -50px;
+	content: '\201c';
+}
+
+.quote:after {
+	right: -50px;
+	content: '\201d';
+}
+
+#author {
+	font-weight: bold;
+	color: rebeccapurple;
+}
+#new-quote {
+	float: right;
+}

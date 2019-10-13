@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>title</title>
+	<meta name="author" content="name">
+
+	<script>
+		/* My Solution */
+
+		function convertHTML(str) {
+			// &colon;&rpar;
+
+			let result = '';
+			for (let i = 0; i < str.length; i++) {
+				switch (str[i]) {
+				case '&':
+					result += '&amp;';
+					break;
+				case '<':
+					result += '&lt;';
+					break;
+				case '>':
+					result += '&gt;';
+					break;
+				case "'":
+					result += '&apos;';
+					break;
+
+				case '"':
+					result += '&quot;';
+					break;
+				default:
+					result += str[i];
+					break;
+				}
+			}
+			console.log(result);
+			return result;
+		}
+
+		convertHTML("Dolce & Gabbana");
+		/* FCC: Basic Solution */
+
+		function convertHTML(str) {
+			// Split by character to avoid problems.
+
+			var temp = str.split('');
+
+			// Since we are only checking for a few HTML elements I used a switch
+
+			for (var i = 0; i < temp.length; i++) {
+				switch (temp[i]) {
+				case '<':
+					temp[i] = '&lt;';
+					break;
+				case '&':
+					temp[i] = '&amp;';
+					break;
+				case '>':
+					temp[i] = '&gt;';
+					break;
+				case '"':
+					temp[i] = '&quot;';
+					break;
+				case "'":
+					temp[i] = "&apos;";
+					break;
+				}
+			}
+
+			temp = temp.join('');
+			return temp;
+		}
+
+		//test here
+		convertHTML("Dolce & Gabbana");
+		/* FCC: Intermediate Solution */
+		function convertHTML(str) {
+			//Chaining of replace method with different arguments
+			str = str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, "&apos;");
+			return str;
+		}
+
+		// test here
+		convertHTML("Dolce & Gabbana");
+
+		/* FCC: Advanced Solution */
+		function convertHTML(str) {
+			// Use Object Lookup to declare as many HTML entities as needed.
+			htmlEntities = {
+				'&': '&amp;',
+				'<': '&lt;',
+				'>': '&gt;',
+				'"': '&quot;',
+				'\'': "&apos;"
+			};
+			//Use map function to return a filtered str with all entities changed automatically.
+			return str.split('').map(entity => htmlEntities[entity] || entity).join('');
+		}
+
+		// test here
+		convertHTML("Dolce & Gabbana");
+	</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

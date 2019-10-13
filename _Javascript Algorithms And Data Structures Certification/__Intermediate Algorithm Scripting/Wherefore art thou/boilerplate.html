@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>title</title>
+	<meta name="author" content="name">
+
+	<script>
+		/* My Solution */
+		function whatIsInAName(collection, source) {
+			// What's in a name?
+			var arr = [];
+			// Only change code below this line
+
+			collection.forEach(item => {
+				let keys = Object.keys(source);
+				let matchCount = 0;
+				for (let i = 0; i < keys.length; i++) {
+					let key = keys[i];
+					if (item[key] == source[key]) {
+						matchCount++;
+					}
+				}
+				if (matchCount == keys.length) {
+
+					arr.push(item);
+				}
+
+			});
+
+			console.log(arr);
+			// Only change code above this line
+			return arr;
+		}
+
+		//		whatIsInAName([{
+		//			first: "Romeo",
+		//			last: "Montague"
+		//		}, {
+		//			first: "Mercutio",
+		//			last: null
+		//		}, {
+		//			first: "Tybalt",
+		//			last: "Capulet"
+		//		}], {
+		//			last: "Capulet"
+		//		});
+
+		whatIsInAName([{
+			"apple": 1,
+			"bat": 2
+		}, {
+			"apple": 1
+		}, {
+			"apple": 1,
+			"bat": 2,
+			"cookie": 2
+		}], {
+			"apple": 1,
+			"cookie": 2
+		});
+
+		/* FCC: Basic Solution */
+		function whatIsInAName(collection, source) {
+			// "What's in a name? that which we call a rose
+			// By any other name would smell as sweet.”
+			// -- by William Shakespeare, Romeo and Juliet
+			var srcKeys = Object.keys(source);
+
+			// filter the collection
+			return collection.filter(function (obj) {
+				for (var i = 0; i < srcKeys.length; i++) {
+					if (!obj.hasOwnProperty(srcKeys[i]) || obj[srcKeys[i]] !== source[srcKeys[i]]) {
+						return false;
+					}
+				}
+				return true;
+			});
+		}
+
+		// test here
+		whatIsInAName([{
+			first: "Romeo",
+			last: "Montague"
+		}, {
+			first: "Mercutio",
+			last: null
+		}, {
+			first: "Tybalt",
+			last: "Capulet"
+		}], {
+			last: "Capulet"
+		});
+
+		/* FCC: Intermediate Solution */
+		function whatIsInAName(collection, source) {
+			// "What's in a name? that which we call a rose
+			// By any other name would smell as sweet.”
+			// -- by William Shakespeare, Romeo and Juliet
+			var srcKeys = Object.keys(source);
+
+			return collection.filter(function (obj) {
+				return srcKeys.every(function (key) {
+					return obj.hasOwnProperty(key) && obj[key] === source[key];
+				});
+			});
+		}
+
+		// test here
+		whatIsInAName([{
+			first: "Romeo",
+			last: "Montague"
+		}, {
+			first: "Mercutio",
+			last: null
+		}, {
+			first: "Tybalt",
+			last: "Capulet"
+		}], {
+			last: "Capulet"
+		});
+
+		/* FCC: Advanced Solution */
+
+		function whatIsInAName(collection, source) {
+			// "What's in a name? that which we call a rose
+			// By any other name would smell as sweet.”
+			// -- by William Shakespeare, Romeo and Juliet
+			var srcKeys = Object.keys(source);
+
+			// filter the collection
+			return collection.filter(function (obj) {
+				return srcKeys
+					.map(function (key) {
+						return obj.hasOwnProperty(key) && obj[key] === source[key];
+					})
+					.reduce(function (a, b) {
+						return a && b;
+					});
+			});
+		}
+
+		// test here
+		whatIsInAName([{
+			first: "Romeo",
+			last: "Montague"
+		}, {
+			first: "Mercutio",
+			last: null
+		}, {
+			first: "Tybalt",
+			last: "Capulet"
+		}], {
+			last: "Capulet"
+		});
+	</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

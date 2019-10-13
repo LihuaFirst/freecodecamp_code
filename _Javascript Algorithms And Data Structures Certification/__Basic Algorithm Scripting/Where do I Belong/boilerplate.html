@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>title</title>
+	<meta name="author" content="name">
+
+	<script>
+		/* Mine */
+		function compare(a, b) {
+			if (a < b) {
+				return -1;
+			}
+			if (a > b) {
+				return 1
+			}
+			return 0;
+		}
+
+		function getIndexToIns(arr, num) {
+			// Find my place in this sorted array.
+
+			// sort the arr
+			arr.sort(compare);
+			//console.log(arr);
+
+			// loop through and compare with num, find the index
+			let index = arr.length;
+			for (let i = arr.length - 1; i >= 0; i--) {
+				//console.log('i: '+arr[i]);
+				if (arr[i] > num) {
+					index = i;
+				} else if (arr[i] == num) {
+					index = i;
+				}
+			}
+			console.log(index);
+			return index;
+		}
+
+		//getIndexToIns([40, 60], 50);
+		//getIndexToIns([10, 20, 30, 40, 50], 30)
+		//getIndexToIns([20, 3, 5], 19) 
+		getIndexToIns([2, 5, 10], 15)
+
+		/* FCC: Basic Solution */
+		/* First I sort the array using .sort(callbackFuntion) to sort it by lowest to highest, from left to right. */
+		/* Then I use a for loop to compare the items in the array starting from the smallest one. When an item on the array is greater than the number we are comparing against, then we return the index as an integer.*/
+		function getIndexToIns(arr, num) {
+			arr.sort(function (a, b) {
+				return a - b;
+			});
+
+			for (var a = 0; a < arr.length; a++) {
+				if (arr[a] >= num)
+					return a;
+			}
+
+			return arr.length;
+		}
+		/* FCC: Basic Solution */
+		/* I do not sort the arr input array. I run a for loop counting whenever the num input is bigger than an arr input number. This number is equivalent to what num’s position would be in a sorted array.*/
+
+		function getIndexToIns(arr, num) {
+			// Find my place in this sorted array.
+			var times = arr.length; // runs the for loop once for each thing in the array
+			var count = 0;
+			for (var i = 0; i < times; i++) {
+				if (num > arr[i]) {
+					count++;
+				}
+			} // counts how many array numbers are smaller than num
+			return count; // the above equals num's position in a sorted array
+		}
+
+		getIndexToIns([40, 60], 50);
+
+		/* Intermedia */
+		/* First we add the number num to the array using push() which adds it as the last element of the array. */
+		/* Then we use sort() with the callback function function(a, b){return a-b} to sort the numbers in ascending order. */
+		/* Lastly we return the postion or index of num in the array with the indexOf() function.*/
+		function getIndexToIns(arr, num) {
+			arr.push(num);
+			arr.sort(function (a, b) {
+				return a - b
+			});
+			return arr.indexOf(num);
+		}
+
+
+		/* Advanced */
+		/* We use method-chaining to invoke one method after another to solve the problem in a single line. First we merge arr and num by invoking the arr.concat(num) method */
+		/* Then we use sort() with the callback arrow function (a, b) => return a-b to sort the numbers in ascending order */
+		/* Lastly we return the postion or index of num in the array with the indexOf() method*/
+		function getIndexToIns(arr, num) {
+
+			return arr.concat(num).sort((a, b) => a - b).indexOf(num);
+
+		}
+
+		getIndexToIns([1, 3, 4], 2);
+	</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

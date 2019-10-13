@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>title</title>
+	<meta name="author" content="name">
+
+	<script>
+		/* My Solution */
+		function spinalCase(str) {
+			// "It's such a fine line between stupid, and clever."
+			// --David St. Hubbins
+			return str.trim().split(/\W/).join('-').toLowerCase();
+
+		}
+
+		console.log(spinalCase('This Is Spinal Tap'));
+
+		/* FCC: Basic Solution */
+		function spinalCase(str) {
+			// Create a variable for the white space and underscores.
+			var regex = /\s+|_+/g;
+
+			// Replace low-upper case to low-space-uppercase
+			str = str.replace(/([a-z])([A-Z])/g, '$1 $2');
+
+			// Replace space and underscore with -
+			return str.replace(regex, '-').toLowerCase();
+		}
+
+		// test here
+		spinalCase('This Is Spinal Tap');
+
+
+		/* FCC: Intermediate Solution */
+		function spinalCase(str) {
+			// Replace low-upper case to low-space-uppercase
+			str = str.replace(/([a-z])([A-Z])/g, '$1 $2');
+			// Split on whitespace and underscores and join with dash
+			return str.toLowerCase().split(/(?:_| )+/).join('-');
+		}
+
+		// test here
+		spinalCase('This Is Spinal Tap');
+
+		/* FCC: Advanced Solution */
+
+		function spinalCase(str) {
+			// "It's such a fine line between stupid, and clever."
+			// --David St. Hubbins
+
+			return str.split(/\s|_|(?=[A-Z])/).join('-').toLowerCase()
+		}
+	</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

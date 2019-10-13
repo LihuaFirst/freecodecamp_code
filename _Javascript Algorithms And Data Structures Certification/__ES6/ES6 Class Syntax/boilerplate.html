@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>title</title>
+	<meta name="author" content="name">
+
+	<script>
+		function makeClass() {
+			"use strict";
+			/* Alter code below this line */
+			class Vegetable {
+				constructor(name) {
+					this.name = name;
+				}
+			}
+			/* Alter code above this line */
+			return Vegetable;
+		}
+		const Vegetable = makeClass();
+		const carrot = new Vegetable('carrot');
+		console.log(carrot.name); // => should be 'carrot'
+
+
+		// Use getters and setters to Control Access to an Object
+		function makeClass() {
+			"use strict";
+			/* Alter code below this line */
+
+			class Thermostat {
+				constructor(fahrenheit) {
+					this._fahrenheit = fahrenheit;
+				}
+
+				get temperature() {
+					return (this._fahrenheit - 32) * 5 / 9;
+				}
+
+				set temperature(updateCelsius) {
+					this._fahrenheit = updateCelsius * 9.0 / 5 + 32;
+				}
+			}
+			/* Alter code above this line */
+			return Thermostat;
+		}
+		const Thermostat = makeClass();
+		const thermos = new Thermostat(76); // setting in Fahrenheit scale
+		let temp = thermos.temperature; // 24.44 in C
+		thermos.temperature = 26;
+		temp = thermos.temperature; // 26 in C
+	</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

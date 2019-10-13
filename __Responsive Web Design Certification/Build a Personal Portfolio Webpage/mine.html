@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>My Profolio</title>
+	<meta name="author" content="name">
+
+	<style type="text/css">
+		body {
+			font-family: Ariel, sans-serif;
+			background: #eee;
+			margin: 0;
+		}
+		
+		.container {
+			position: relative;
+		}
+		
+		#navbar {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: auto;
+			background: #333;
+			text-align: right;
+			z-index: 10;
+		}
+		
+		ul.menu {
+			list-style: none;
+			margin-left: 0;
+			padding-left: 10px;
+		}
+		
+		ul.menu li {
+			display: inline-block;
+			padding: 10px;
+		}
+		
+		.nav-link {
+			display: block;
+			text-decoration: none;
+			color: #fff;
+			font-size: 20px;
+		}
+		
+		.nav-link:hover {
+			text-decoration: underline;
+		}
+		
+		main {
+			position: relative;
+			margin-top: 75px;
+		}
+		
+		#welcome-section {
+			top:0;
+			height: 100vh;
+			text-align: center;
+			background: #EFA8B8;
+			padding-top: 30vh;
+		}
+		
+		#projects {
+			background: #1F487E;
+			height: 100vh;
+			padding-top: 10vh;
+			display: flex;
+			flex-flow: column wrap;
+		}
+		
+		#contact {
+			background: #E26D5A;
+			text-align: center;
+			height: 60vh;
+			padding-top: 20vh;
+		}
+		
+		h1 {
+			font-size: 2em;
+		}
+		
+		#projects h2 {
+			color: #ffffff;
+		}
+		
+		.project-tile {
+			width: 100%;
+			text-align: center;
+		}
+		
+		.project-tile img {
+			width: 100%;
+		}
+		
+		.frame-round {
+			background: #fff;
+			border: 1px solid #000;
+			display: inline-block;
+			vertical-align: top;
+			padding: 10px;
+			width: 250px;
+			height: 250px;
+			margin-right: .5em;
+			margin-bottom: .3em;
+			border-radius: 50%;
+			overflow: hidden;
+		}
+		
+		.crop {
+			height: 100%;
+			overflow: hidden;
+			position: relative;
+			border-radius: 50%;
+		}
+		
+		.crop img {
+			display: block;
+			min-width: 100%;
+			min-height: 100%;
+			margin: auto;
+			position: absolute;
+			top: -100%;
+			right: -100%;
+			bottom: -100%;
+			left: -100%;
+		}
+		
+		#contact a {
+			color: #222;
+			font-weight: bold;
+		}
+		@media (min-width: 780px) {
+			#projects {
+				flex-flow: row nowrap;
+				height: 80vh;
+				padding-top: 20vh;
+				
+			}
+			.project-tile {
+				width: 50%;
+			}
+		}
+	</style>
+</head>
+
+<body class="container">
+		<nav id="navbar">
+			<ul class="menu">
+				<li><a href="#welcome" class="nav-link">Profile</a></li>
+				<li><a href="#projects" class="nav-link">Projects</a></li>
+				<li><a href="#contact" class="nav-link">Contact</a></li>
+			</ul>
+
+		</nav>
+	<main>
+		<section id="welcome-section">
+			<h1>Hello, I'm Lihua.</h1>
+			<h2>I'm a cosplay photographer and props maker.</h2>
+		</section>
+
+		<section id="projects">
+			<div class="project-tile">
+				<h2>Cosplay</h2>
+				<a href="https://www.instagram.com/p/BwL_zWnAfm1/" target="_blank">
+					<div class="frame-round">
+						<div class="crop">
+							<img src="https://instagram.fyqm1-1.fna.fbcdn.net/vp/8b691457b34aa47383893c77864fb453/5D6330B3/t51.2885-15/sh0.08/e35/s640x640/56990452_842364582785030_386854330388346075_n.jpg?_nc_ht=instagram.fyqm1-1.fna.fbcdn.net" alt="crochet">
+						</div>
+					</div>
+				</a>
+			</div>
+
+			<div class="project-tile">
+
+				<h2>Props</h2>
+				<a href="https://www.instagram.com/p/BwWIU0RA5zC/" target="_blank">
+					<div class="frame-round">
+						<div class="crop">
+							<img src="https://instagram.fxds1-1.fna.fbcdn.net/vp/e77801cf4ca30e213bfc59a457539e5c/5D71F633/t51.2885-15/e35/57506525_825905457769814_2751039711802270803_n.jpg?_nc_ht=instagram.fxds1-1.fna.fbcdn.net" alt="cosplay">
+						</div>
+					</div>
+				</a>
+			</div>
+		</section>
+
+		<section id="contact">
+			<h2>Contact</h2>
+			<a href="https://github.com/LihuaFirst" target="_blank" id="profile-link">Github</a>
+
+		</section>
+	</main>
+</body>
+
+</html>

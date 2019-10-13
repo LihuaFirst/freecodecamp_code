@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>title</title>
+	<meta name="author" content="name">
+
+	<script>
+		/* Mine */
+		function titleCase(str) {
+
+			let strArr = str.split(' ');
+			console.log(strArr);
+
+			let regex = /A-Z/;
+			let result = [];
+			for (let i = 0; i < strArr.length; i++) {
+				if (regex.test(strArr[i][0])) {
+					result[i] = strArr[i];
+				} else {
+					result[i] = strArr[i][0].toUpperCase() + strArr[i].slice(1).toLowerCase();
+				}
+			}
+			console.log(result);
+			return result.join(' ');
+		}
+
+		titleCase("I'm a little tea pot");
+
+
+		/* FCC: Basic Solution */
+		String.prototype.replaceAt = function (index, character) {
+			return this.substr(0, index) + character + this.substr(index + character.length);
+		};
+
+		function titleCase(str) {
+			var newTitle = str.split(' ');
+			var updatedTitle = [];
+			for (var st in newTitle) {
+				updatedTitle[st] = newTitle[st].toLowerCase().replaceAt(0, newTitle[st].charAt(0).toUpperCase());
+			}
+			return updatedTitle.join(' ');
+		}
+
+		/* FCC: Intermediate Solution */
+		function titleCase(str) {
+			var convertToArray = str.toLowerCase().split(" ");
+			var result = convertToArray.map(function (val) {
+				return val.replace(val.charAt(0), val.charAt(0).toUpperCase());
+			});
+			return result.join(" ");
+		}
+
+		titleCase("I'm a little tea pot");
+
+		/* FCC: Advanced Solution */
+		function titleCase(str) {
+			return str.toLowerCase().replace(/(^|\s)\S/g, (L) => L.toUpperCase());
+		}
+	</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
