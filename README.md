@@ -1,2 +1,2 @@
-# freecodecamp_code
-My source code when studying on https://learn.freecodecamp.org/
+# freecodecamp code
+source code when doing challenges on https://learn.freecodecamp.org/
